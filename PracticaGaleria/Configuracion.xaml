@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaGaleria.Configuracion"
+             Title="Configuracion">
+    <VerticalStackLayout
+        Spacing="25"
+        Padding="30,0"
+        VerticalOptions="Center">
+
+        <VerticalStackLayout
+        Spacing="25"
+        Padding="30,0"
+        VerticalOptions="Center">
+
+            <Label
+            Text="Tamaño de las imágenes en la Galería:"
+            FontSize="16" />
+
+            <Picker
+            x:Name="TamañoImagenPicker"
+            Title="Selecciona un tamaño"
+            SelectedIndexChanged="TamañoImagenPicker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Pequeño</x:String>
+                    <x:String>Mediano</x:String>
+                    <x:String>Grande</x:String>
+                </Picker.Items>
+            </Picker>
+
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

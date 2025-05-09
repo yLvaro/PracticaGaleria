@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaGaleria.GaleriaPage"
+             xmlns:local="clr-namespace:PracticaGaleria"
+             Title="Galería">
+    <ScrollView>
+        <FlexLayout
+            Wrap="Wrap"
+            JustifyContent="SpaceAround"
+            Padding="10"
+            BindableLayout.ItemsSource="{Binding Animales}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <ImageButton
+                            Source="{Binding ImagenRuta}"
+                            WidthRequest="600"
+                            HeightRequest="750"
+                            Aspect="AspectFit"
+                            Margin="5"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:GaleriaPage}}, Path=MostrarDetalleCommand}"
+                            CommandParameter="{Binding .}" />
+                        <Button
+                            Text="Agregar a mi galería"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:GaleriaPage}}, Path=AgregarAMiGaleriaCommand}"
+                            CommandParameter="{Binding .}"
+                            HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaGaleria.GalPersonalizadaPage"
+             xmlns:local="clr-namespace:PracticaGaleria"
+             Title="Mi galería">
+    <ScrollView>
+        <FlexLayout
+            Wrap="Wrap"
+            JustifyContent="SpaceAround"
+            Padding="10"
+            BindableLayout.ItemsSource="{Binding AnimalesPersonalizados}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <ImageButton
+                        Source="{Binding ImagenRuta}"
+                        WidthRequest="150"
+                        HeightRequest="150"
+                        Aspect="AspectFit"
+                        Margin="5"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:GalPersonalizadaPage}}, Path=MostrarDetalleCommand}"
+                        CommandParameter="{Binding .}" />
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>
